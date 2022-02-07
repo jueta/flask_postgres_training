@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
+import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:vitauautomation@localhost/Vitau'
@@ -30,7 +31,7 @@ def addValue():
 @app.route("/sendValue", methods=['POST'])
 def sendValue():
     valor = request.form["valor"]
-    timestamp = request.form["timestamp"]
+    timestamp = datetime.datetime.now()
     entry = Medicoes(valor, timestamp)
     db.session.add(entry)
     db.session.commit()
