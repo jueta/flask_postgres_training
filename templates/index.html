@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Flask SQL Tutorial</title>
+  </head>
+  <body>
+      <form action="{{ url_for('sendValue')}}" method="post">
+          <h5>Enter the Details</h5>
+          <div>
+              <input type="text" name="valor" placeholder="valor">
+          </div>
+          <div>
+              <input type="text" name="timestamp" placeholder="timestamp">
+          </div>
+          <div>
+              <button >Submit</button>
+          </div>
+      </form>
+  </body>
+
+</html>
